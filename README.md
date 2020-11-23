@@ -64,9 +64,9 @@ The playbook implements the following tasks:
 - Install docker.io
 - Install pip3
 - Install docker python module
-- Use more memory_
+- Start Docker service, increase virtual memory on ELK machine
 - Enable docker service
-- Download and lauch elk container
+- Download and launch elk container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -83,8 +83,8 @@ Filebeat-7.6.1
 Metricbeat-7.6.1
 
 These Beats allow us to collect the following information from each machine:
-Filebeat collects logs from machines in your network. You can specify what kind of logs you want it to collect.
-Metricbeat measure metricsets that are available. This includes container, cpu, diskio, healthcheck, info, memory, and network. Image metricset is not enabled by default.
+Filebeat will allow us to specify specific files to monitor and will log changes to those files. This could be used to collect new lines from log files or to monitor changes to important system files like /etc/shadow.
+Metricbeat will allow us to specify specific information about services and programs running on the monitored machines. For instance, you could use Metricbeat to monitor the CPU load, or the available drive space on monitored machines.
 
 
 ### Using the Playbook
